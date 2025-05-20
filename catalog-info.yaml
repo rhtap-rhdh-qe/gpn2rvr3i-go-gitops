@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: gpn2rvr3i-go-gitops
+  description: This is GitOps manifest for gpn2rvr3i-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=gpn2rvr3i-go
+    backstage.io/kubernetes-id: gpn2rvr3i-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: gpn2rvr3i-go
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:gpn2rvr3i-go
